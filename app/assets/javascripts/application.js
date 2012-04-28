@@ -12,4 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require fancybox
 //= require_tree .
+
+$(function(){
+  $('.product').bind('click', function(){
+    var id = this.id;
+    $.get('/show_product/' + id, function(content){
+      $('#show_product').html(content);
+    });
+  });
+
+  $('.inline').fancybox();
+
+  $('.up-down').mouseover(function(){
+    var id = this.id;
+    $('#' + id + ' .default').stop().animate({
+      height: 38    
+    }, 200);                        
+  }).mouseout(function(){
+    var id = this.id;
+    $('#' + id + ' .default').stop().animate({
+      height: 60  
+    }, 200);   
+  });
+
+  $(".pop").popover();
+});

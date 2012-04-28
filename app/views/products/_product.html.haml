@@ -1,0 +1,8 @@
+%a.inline.span2.boxwrap.up-down.product{:id => product.id, :href => "#show_product"}
+  .slide.default
+    %h5= product.name
+    %h6= number_to_currency(product.price)
+  .slide.onhover
+    .link
+      see details
+      %i.icon-arrow-right.icon-white

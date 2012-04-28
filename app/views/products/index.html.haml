@@ -1,0 +1,17 @@
+.product_index
+  .row.product_list
+    .title
+      %h1.span12 Product Listing
+      %p#notice.span12= notice
+    = render @products
+
+.create_product
+  = simple_form_for(@product, :html => {:class => "form-horizontal"}) do |f|
+    %h3= "Create New Product"
+    = render 'fields', :f => f
+    .controls.actions
+      = f.button :submit, "Create", :class => "btn btn-large btn-primary"
+
+%div{:style => "display:none"}
+  #show_product
+    .product
