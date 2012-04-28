@@ -7,6 +7,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'fancybox-rails'
 gem 'simple_form'
+gem 'faker'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,10 +21,6 @@ end
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
-end
-
-group :development do
-  gem 'faker'
 end
 
 group :test do
