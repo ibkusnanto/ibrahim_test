@@ -3,4 +3,6 @@ class Product < ActiveRecord::Base
 
   validates_presence_of :name, :price, :description
   validates :price, :numericality => { :greater_than_or_equal_to => 0 }
+
+  default_scope order: 'products.name ASC'
 end
